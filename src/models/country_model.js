@@ -15,7 +15,7 @@ CountryModel.prototype.getData = function () {
     const countryNameList = data.map((country) => {
       return country.name;
     });
-    PubSub.publish("Country:country-list", countryNameList);
+    PubSub.publish("Country:country-list", countryNameList.sort());
   })
 };
 
