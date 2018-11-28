@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
   console.log('JavaScript Loaded');
   const countryModel = new CountryModel();
   countryModel.getData();
+  countryModel.bindEvents();
 
   const countrySelectorView = new CountrySelectorView(document.querySelector('#countries'));
   countrySelectorView.bindEvents();
