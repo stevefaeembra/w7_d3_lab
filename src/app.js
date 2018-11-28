@@ -7,6 +7,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const countryModel = new CountryModel();
   countryModel.getData();
 
-  const countrySelectorView = new CountrySelectorView();
+  const countrySelectorView = new CountrySelectorView(document.querySelector('#countries'));
   countrySelectorView.bindEvents();
 });

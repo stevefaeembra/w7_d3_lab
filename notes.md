@@ -12,8 +12,9 @@ Plan of Attack
 - [View] CountrySelectorView
   - ~~subscribe change on #countries select~~
     - publish CountrySelectorView:selected-country
-  - subscribe to Country:country-list
-    - add option to select
+  - ~~subscribe to Country:country-list~~
+    - ~~add option to select~~
+  - publish selected result (change on select #countries)
 
 - [View] CountryInfoView
   - subscribe to Country:country-info

@@ -1,7 +1,7 @@
 const PubSub = require('../helpers/pub-sub.js');
 
-const CountrySelectorView = function () {
-
+const CountrySelectorView = function (element) {
+  this.element = element;
 };
 
 CountrySelectorView.prototype.bindEvents = function () {
@@ -13,10 +13,13 @@ CountrySelectorView.prototype.bindEvents = function () {
       const listOption = document.createElement('option');
       listOption.setAttribute('value', item);
       listOption.textContent = item;
-
       countryPullDown.appendChild(listOption);
     });
   });
+
+  this.element.addEventListener("change", (event) => {
+    PubSub.publish("CountrySelectorView:selected-country",this.element.value);
+  })
 
 };
 
