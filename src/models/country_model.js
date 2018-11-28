@@ -10,6 +10,8 @@ CountryModel.prototype.getData = function () {
   const requestHelper = new RequestHelper("https://restcountries.eu/rest/v2/all");
   requestHelper.getData((data) => {
     this.countryData = data;
+    console.log("Country Data");
+    console.dir(this.countryData);
     const countryNameList = data.map((country) => {
       return country.name;
     });
